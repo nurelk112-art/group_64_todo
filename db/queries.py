@@ -1,18 +1,19 @@
 
 create_tasks = """
-    CREATE TABLE IF NOT EXISTS task(
+    CREATE TABLE IF NOT EXISTS tasks(
          id INTEGER PRIMARY KEY AUTOINCREMENT,
-         task TEXT NOT NULL  
+         task TEXT NOT NULL,
+         created_at TEXT NOT NULL 
     )   
 """
 
 # CRUD   CREATE - READ - UPDATE - DELETE
 
 # CREATE
-insert_task = "INSERT INTO tasks (task) VALUES(?)" 
+insert_task = "INSERT INTO tasks (task, created_at) VALUES(?,?)" 
 
 # READ
-select_tasks = 'SELECT id, task FROM tasks'
+select_tasks = 'SELECT id, task, created_at FROM tasks'
 
 # UPDATE
 update_task = 'UPDATE tasks SET task = ? WHERE id = ?' 
